@@ -16,7 +16,7 @@ GET https://adentech/users/login
 
 > Response Object
 ```
-{    
+{
     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
     data: {
         user: {
@@ -90,7 +90,7 @@ GET https://adentech/users/patients
 `Request Parameters`
 ```
 (
-    dentist_id: "string" <required>
+    user_id: "string" <required>
 )
 ```
 
@@ -101,7 +101,7 @@ GET https://adentech/users/patients
         patients: [
             {
                 _id: "string",
-                dentist_id: "string", 
+                user_id: "string", 
                 first_name: "string",
                 last_name: "string",
                 gender: "string",    
@@ -132,7 +132,7 @@ POST https://adentech/users/patients/apointments
 `Request Parameters`
 ```
 (
-    dentist_id: "string" <required>,
+    user_id: "string" <required >(if dentist/user exist),
     apointment: "string" <required>
 )
 ```
@@ -159,7 +159,7 @@ GET https://adentech/users/patients/apointments
 `Request Parameters`
 ```
 (
-    dentist_id: "string" <required>
+    user_id: "string" <required>
 )
 ```
 
@@ -167,8 +167,8 @@ GET https://adentech/users/patients/apointments
 ```
 {
     data: {
-        patiet: {
-            id: "string",
+        patient: {
+            _id: "string",
             apointment: "date",
             full_name: "string",
             phone_number: "integer"
@@ -185,7 +185,7 @@ POST https://adentech/patients
 `Request Parameters`
 ```
 (
-    dentist_id: "string" <required>,
+    user_id: "string" <required>,
     first_name: "string" <required>,
     last_name: "string" <required>,
     gender: "string" <required>,
@@ -206,7 +206,7 @@ POST https://adentech/patients
     data: {
         patient: {
             _id: "string",
-            dentist_id: "string" <required>,
+            user_id: "string" <required>,
             first_name: "string" <required>,
             last_name: "string" <required>,
             gender: "string" <required>,
@@ -224,5 +224,30 @@ POST https://adentech/patients
         }
     }
 }
+```
+
+## Add/Post Patient Records
+
+### post generalExamination records
+```
+POST https://adentech/generalExamination/examenEndobuccal
+```
+
+`Request Parameters`
+```
+(
+    user_id: "",
+    patient_id: "string",
+    overture_buccal: "string",
+    hygiene_buccaux_dentaires: "string",
+    etat_muqueuses_levre_sup: "string",
+    etat_muqueuses_levre_inf: "string",
+    etat_muqueuses_jugale: "string",
+    etat_muqueuses_palatin: "string",
+    etat_muqueuses_planche: "string",
+    etat_muqueuses_langual: "string",
+    etat_muqueuses_gengival: "string",
+    etat_muqueuses_autres_lesion: "string",
+)
 ```
 
