@@ -9,34 +9,34 @@ GET https://adentech/users/login
 `Request Parameters`
 ```    
 (
-    "email": "string" <required>,
-    "password": "string" <required>
+    email: "string" <required>,
+    password: "string" <required>
 )
 ```
 
 > Response Object
 ```
 {    
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-    "data": {
-        "user": {
-            "patients_id": "arrayList",
-            "_id": "string",
-            "first_name": "string", 
-            "last_name": "string", 
-            "birth_date": "date",
-            "email": "string", 
-            "profile_image": "buffer",
-            "identity_card": "buffer",
-            "year_of_study": "integer",
-            "phone_number": "integer"
-            "gender": "string",
-            "faculty": "string",
-            "country": "string",
-            "year_of_study": "integer",
-            "grade": "string",
-            "specialty": "string",
-            "role": "string"
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    data: {
+        user: {
+            _id: "string",
+            patients_id: "arrayList",
+            first_name: "string", 
+            last_name: "string", 
+            birth_date: "date",
+            email: "string", 
+            profile_image: "buffer",
+            identity_card: "buffer",
+            year_of_study: "integer",
+            phone_number: "integer"
+            gender: "string",
+            faculty: "string",
+            country: "string",
+            year_of_study: "integer",
+            grade: "string",
+            specialty: "string",
+            role: "string"
         }
     }
 }
@@ -50,33 +50,33 @@ POST https://adentech/users/register
 `Request Parameters`
 ```    
 (
-    "first_name": "string" <required>,
-    "last_name": "string" <required>,
-    "birth_date": "date" <required>,
-    "email": "string" <required>,
-    "password": "string" <required>,
-    "password2": "string" <required>,
-    "profile_image": "buffer",
-    "identity_card": "buffer" <required>,
-    "phone_number": "integer",
-    "gender": "string" <required>,
-    "faculty": "string",
-    "country": "string" <required>,
-    "year_of_study": "integer",
-    "grade": "string",
-    "specialty": "string"
+    first_name: "string" <required>,
+    last_name: "string" <required>,
+    birth_date: "date" <required>,
+    email: "string" <required>,
+    password: "string" <required>,
+    password2: "string" <required>,
+    profile_image: "buffer",
+    identity_card: "buffer" <required>,
+    phone_number: "integer",
+    gender: "string" <required>,
+    faculty: "string",
+    country: "string",
+    year_of_study: "integer",
+    grade: "string",
+    specialty: "string"
 )
 ```
 
 > Response Object
 ```
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
     data: {
         user: {
-            "patients_id": "arrayList,
-            "_id": "string",
-            "role": "string"
+            _id: "string",
+            patients_id: "arrayList",
+            role: "string"
         }
     }
 }
@@ -90,29 +90,29 @@ GET https://adentech/users/patients
 `Request Parameters`
 ```
 (
-    user_id: "string" <required>
+    dentist_id: "string" <required>
 )
 ```
 
 > Response Object
 ```
 {
-    "data": {
-        "patients": [
+    data: {
+        patients: [
             {
-                "_id": "string",
-                "dentist_id": "string", 
-                "first_name": "string",
-                "last_name": "string",
-                "gender": "string",    
-                "age": "string",
-                "address": "string",
-                "phone_number": "string",
-                "email": "string",
-                "marital_status": "string",
-                "job": "string",
-                "faculty_access": "string",
-                "apointment": "string"
+                _id: "string",
+                dentist_id: "string", 
+                first_name: "string",
+                last_name: "string",
+                gender: "string",    
+                age: "string",
+                address: "string",
+                phone_number: "string",
+                email: "string",
+                marital_status: "string",
+                job: "string",
+                faculty_access: "string",
+                apointment: "string"
             },
             {
                 ...
@@ -136,6 +136,18 @@ GET https://adentech/users/patients/apointments
 ```
 
 
+> Response Object
+{
+    data: {
+        patiet: {
+            id: "string",
+            apointment: "date",
+            full_name: "string",
+            phone_number: "integer"
+        }
+    }
+}
+
 ## Add/Post a new Patient
 ```
 POST https://adentech/patients
@@ -144,18 +156,18 @@ POST https://adentech/patients
 `Request Parameters`
 ```
 (
-    "dentist_id": "string" <required>,
-    "first_name": "string" <required>,
-    "last_name": "string" <required>,
-    "gender": "string" <required>,
-    "age": "integer" <required>,
-    "address": "string",
-    "phone_number: "integer",
-    "email": "string",
-    "marital_status": "string",
-    "job": "string",
-    "faculty_access": "arrayList",
-    "apointment": "date"
+    dentist_id: "string" <required>,
+    first_name: "string" <required>,
+    last_name: "string" <required>,
+    gender: "string" <required>,
+    age: "integer" <required>,
+    address: "string",
+    phone_number: "integer",
+    email: "string",
+    marital_status: "string",
+    job: "string,
+    faculty_access: "arrayList",
+    apointment: "date"
 )
 ```
 
@@ -164,22 +176,22 @@ POST https://adentech/patients
 {
     data: {
         patient: {
-            "_id": "string",
-            "dentist_id": "string" <required>,
-            "first_name": "string" <required>,
-            "last_name": "string" <required>,
-            "gender": "string" <required>,
-            "age": "integer" <required>,
-            "address": "string",
-            "phone_number: "integer",
-            "email": "string",
-            "marital_status": "string",
-            "job": "string",
-            "faculty_access": "arrayList",
-            "apointment": "date",
-            "date_of_modification": "date",
-            "date_of_creation": "date",
-            "__v": "integer"
+            _id: "string",
+            dentist_id: "string" <required>,
+            first_name: "string" <required>,
+            last_name: "string" <required>,
+            gender: "string" <required>,
+            age: "integer" <required>,
+            address: "string",
+            phone_number: "integer",
+            email: "string",
+            marital_status: "string",
+            job: "string",
+            faculty_access: "arrayList",
+            apointment: "date",
+            date_of_modification: "date",
+            date_of_creation: "date",
+            __v: "integer"
         }
     }
 }
