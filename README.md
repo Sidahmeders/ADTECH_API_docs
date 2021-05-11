@@ -129,6 +129,27 @@ GET https://adentech/users/patients
 POST https://adentech/users/patients/apointments
 ```
 
+`Request Parameters`
+```
+(
+    dentist_id: "string" <required>,
+    apointment: "string" <required>
+)
+```
+
+> Response Object
+```
+{
+    data: {
+        patient: {
+            _id: "string",
+            full_name: "string",
+            apointment: "string",
+            phone_number: "integer"
+        }
+    }
+}
+```
 
 ## Return/Get all the apointments a user have
 ```
@@ -138,7 +159,7 @@ GET https://adentech/users/patients/apointments
 `Request Parameters`
 ```
 (
-    dentist_id: "string"
+    dentist_id: "string" <required>
 )
 ```
 
