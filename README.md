@@ -3,7 +3,7 @@
 
 ## **SignIn/Get a Single User**
 ```
-GET /https://adentech/users/login
+GET https://adentech/users/login
 ```
 
 `Request Parameters`
@@ -44,7 +44,7 @@ GET /https://adentech/users/login
 
 ## **SignUp/Post a New User**
 ```
-POST /https://adentech/users/register
+POST https://adentech/users/register
 ```
 
 `Request Parameters`
@@ -81,3 +81,61 @@ POST /https://adentech/users/register
     }
 }
 ```
+
+## **Return/Get all the patients a user have**
+```
+GET https://adentech/users/patients
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>
+)
+```
+
+> Response Object
+```
+{
+    data: [
+        {
+            "_id": "string",
+            "dentist_id": "string", 
+            first_name: "string",
+            last_name: "string",
+            gender: "string",    
+            age: "string",
+            address: "string",
+            phone_number: "string",
+            email: "string",
+            marital_status: "string",
+            job: "string",
+            faculty_access: "string",
+            apointment: "string"
+        },
+        {
+            ...
+            ...
+        },
+        ...
+    ]
+}
+```
+
+## **Add apointment to an existing user OR create a new user with apointment**
+```
+POST https://adentech/users/patients/apointments
+```
+
+
+## ** Return/Get all the apointments a user have**
+```
+GET https://adentech/users/patients/apointments
+```
+
+
+## **Add/Post a new Patient/ **
+```
+POST https://adentech/patients
+```
+
