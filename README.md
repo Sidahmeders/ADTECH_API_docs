@@ -98,7 +98,7 @@ GET https://adentech/users/patients
 ```
 {
     "data": {
-        "users": [
+        "patients": [
             {
                 "_id": "string",
                 "dentist_id": "string", 
