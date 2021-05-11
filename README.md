@@ -1,38 +1,7 @@
-# ADTECH_API_docs
-
-
-
 # A-Dentech Endpoints
 
 
-## **Get All Users**
-```
-GET /https://adentech/users
-```
-
- `Request Parameters`
-```
-(
-    email: "string",
-    is_admin: boolean,
-)
-
-Headers: {
-    "token": "<required>"
-}
-```
-
-> `Response Objects`
-```
-[
-    {"dentist_id": 1, "first_name": "John", ...},
-    {"dentist_id": 2, "first_name": "Sara", ...},
-    {"dentist_id": 3, "first_name": "Karl", ...},
-    ...
-]
-```
-
-## **Get a Single User**
+## **SignIn/Get a Single User**
 ```
 GET /https://adentech/users/login
 ```
@@ -40,28 +9,30 @@ GET /https://adentech/users/login
 `Request Parameters`
 ```    
 (
-    email: "string",
-    password: "string"
+    "email": "string" <required>,
+    "password": "string" <required>
 )
 ```
 
 > Response Object
 ```
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-    "user": {
-        "dentist_id": 99,
-        "first_name": "John", 
-        "last_name": "Markus", 
-        "email": "example@gmail.com", 
-        "birth_date": "1995-05-23",
-        "year_of_study": 2,
-        "phone_number": "0555403010"
+{    
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "data":{
+        "user": {
+            "_id": 99,
+            "first_name": "John", 
+            "last_name": "Markus", 
+            "email": "example@gmail.com", 
+            "birth_date": "1995-05-23",
+            "year_of_study": 2,
+            "phone_number": "0555403010"
+        }
     }
 }
 ```
 
-## **Create/Post New User**
+## **SignUp/Post a New User**
 ```
 POST /https://adentech/users/register
 ```
@@ -69,28 +40,33 @@ POST /https://adentech/users/register
 `Request Parameters`
 ```    
 (
-    f_name: "string",
-    l_name: "string",
-    birth_date: "year-month-day",
-    email: "string",
-    password: "string",
-    ...
-    ...
+    "first_name": "string" <required>,
+    "last_name": "string" <required>,
+    "birth_date": "date" <required>,
+    "email": "string" <required>,
+    "password": "string" <required>,
+    "password2": "string" <required>,
+    "profile_image": "buffer",
+    "identity_card": "buffer",
+    "phone_number": "number",
+    "gender": "string" <required>,
+    "faculty": "string",
+    "country": "string",
+    "year_of_study": "date",
+    "grade": "string",
+    "specialty": "string"
 )
 ```
 
 > Response Object
 ```
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-    "user": {
-        "dentist_id": 99,
-        "first_name": "John", 
-        "last_name": "Markus", 
-        "email": "example@gmail.com", 
-        "birth_date": "1995-05-23",
-        "year_of_study": 2,
-        "phone_number": "0555403010"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    data: {
+        user: {
+            "dentist_id": 99,
+            "role": "basic"
+        }
     }
 }
 ```
