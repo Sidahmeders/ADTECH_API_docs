@@ -97,28 +97,30 @@ GET https://adentech/users/patients
 > Response Object
 ```
 {
-    data: [
-        {
-            "_id": "string",
-            "dentist_id": "string", 
-            first_name: "string",
-            last_name: "string",
-            gender: "string",    
-            age: "string",
-            address: "string",
-            phone_number: "string",
-            email: "string",
-            marital_status: "string",
-            job: "string",
-            faculty_access: "string",
-            apointment: "string"
-        },
-        {
+    "data": {
+        "users": [
+            {
+                "_id": "string",
+                "dentist_id": "string", 
+                first_name: "string",
+                last_name: "string",
+                gender: "string",    
+                age: "string",
+                address: "string",
+                phone_number: "string",
+                email: "string",
+                marital_status: "string",
+                job: "string",
+                faculty_access: "string",
+                apointment: "string"
+            },
+            {
+                ...
+                ...
+            },
             ...
-            ...
-        },
-        ...
-    ]
+        ]
+    }
 }
 ```
 
