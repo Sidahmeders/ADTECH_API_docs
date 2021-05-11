@@ -164,6 +164,7 @@ GET https://adentech/users/patients/apointments
 ```
 
 > Response Object
+```
 {
     data: {
         patiet: {
@@ -174,6 +175,7 @@ GET https://adentech/users/patients/apointments
         }
     }
 }
+```
 
 ## Add/Post a new Patient
 ```
