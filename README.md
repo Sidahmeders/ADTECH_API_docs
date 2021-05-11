@@ -135,6 +135,12 @@ POST https://adentech/users/patients/apointments
 GET https://adentech/users/patients/apointments
 ```
 
+`Request Parameters`
+```
+(
+    dentist_id: "string"
+)
+```
 
 > Response Object
 {
