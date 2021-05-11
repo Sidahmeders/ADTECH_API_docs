@@ -61,7 +61,7 @@ POST https://adentech/users/register
     "phone_number": "integer",
     "gender": "string" <required>,
     "faculty": "string",
-    "country": "string",
+    "country": "string" <required>,
     "year_of_study": "integer",
     "grade": "string",
     "specialty": "string"
@@ -102,17 +102,17 @@ GET https://adentech/users/patients
             {
                 "_id": "string",
                 "dentist_id": "string", 
-                first_name: "string",
-                last_name: "string",
-                gender: "string",    
-                age: "string",
-                address: "string",
-                phone_number: "string",
-                email: "string",
-                marital_status: "string",
-                job: "string",
-                faculty_access: "string",
-                apointment: "string"
+                "first_name": "string",
+                "last_name": "string",
+                "gender": "string",    
+                "age": "string",
+                "address": "string",
+                "phone_number": "string",
+                "email": "string",
+                "marital_status": "string",
+                "job": "string",
+                "faculty_access": "string",
+                "apointment": "string"
             },
             {
                 ...
@@ -124,20 +124,64 @@ GET https://adentech/users/patients
 }
 ```
 
-## **Add apointment to an existing user OR create a new user with apointment**
+## Add apointment to an existing patient OR create a new patient with apointment
 ```
 POST https://adentech/users/patients/apointments
 ```
 
 
-## ** Return/Get all the apointments a user have**
+## Return/Get all the apointments a user have
 ```
 GET https://adentech/users/patients/apointments
 ```
 
 
-## **Add/Post a new Patient/ **
+## Add/Post a new Patient
 ```
 POST https://adentech/patients
+```
+
+`Request Parameters`
+```
+(
+    "dentist_id": "string" <required>,
+    "first_name": "string" <required>,
+    "last_name": "string" <required>,
+    "gender": "string" <required>,
+    "age": "integer" <required>,
+    "address": "string",
+    "phone_number: "integer",
+    "email": "string",
+    "marital_status": "string",
+    "job": "string",
+    "faculty_access": "arrayList",
+    "apointment": "date"
+)
+```
+
+> Response Object
+```
+{
+    data: {
+        patient: {
+            "_id": "string",
+            "dentist_id": "string" <required>,
+            "first_name": "string" <required>,
+            "last_name": "string" <required>,
+            "gender": "string" <required>,
+            "age": "integer" <required>,
+            "address": "string",
+            "phone_number: "integer",
+            "email": "string",
+            "marital_status": "string",
+            "job": "string",
+            "faculty_access": "arrayList",
+            "apointment": "date",
+            "date_of_modification": "date",
+            "date_of_creation": "date",
+            "__v": "integer"
+        }
+    }
+}
 ```
 
