@@ -116,7 +116,7 @@ Headers: {
                 marital_status: "string",
                 job: "string",
                 faculty_access: "string",
-                apointment: "string"
+                apointment: "date"
             },
             {
                 ...
