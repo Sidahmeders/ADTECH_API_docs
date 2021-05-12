@@ -27,7 +27,6 @@ POST https://adentech/users/login
             birth_date: "date",
             email: "string", 
             profile_image: "buffer",
-            identity_card: "buffer",
             year_of_study: "integer",
             phone_number: "integer"
             gender: "string",
