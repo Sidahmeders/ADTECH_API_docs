@@ -1,9 +1,9 @@
 # A-Dentech Endpoints
 
 
-## **SignIn/Get a Single User**
+## **SignIn/get a Single User**
 ```
-GET https://adentech/users/login
+POST https://adentech/users/login
 ```
 
 `Request Parameters`
@@ -383,4 +383,41 @@ GET https://adentech/-----/-----
 {}
 ```
 
+#### ----- collection
+
+```
+GET https://adentech/-----/-----
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+)
+```
+
+> Response Object
+```
+{}
+```
+
+#### ----- collection
+
+```
+GET https://adentech/-----/-----
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+)
+```
+
+> Response Object
+```
+{}
+```
 
