@@ -92,6 +92,10 @@ GET https://adentech/users/patients
 (
     user_id: "string" <required>
 )
+
+Headers: {
+    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
+}
 ```
 
 > Response Object
@@ -133,8 +137,12 @@ POST https://adentech/users/patients/apointments
 ```
 (
     user_id: "string" <required >(if dentist/user exist),
-    apointment: "string" <required>
+    apointment: "date" <required>
 )
+
+Headers: {
+    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
+}
 ```
 
 > Response Object
@@ -144,7 +152,7 @@ POST https://adentech/users/patients/apointments
         patient: {
             _id: "string",
             full_name: "string",
-            apointment: "string",
+            apointment: "date",
             phone_number: "integer"
         }
     }
@@ -161,6 +169,10 @@ GET https://adentech/users/patients/apointments
 (
     user_id: "string" <required>
 )
+
+Headers: {
+    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
+}
 ```
 
 > Response Object
@@ -198,6 +210,10 @@ POST https://adentech/patients
     faculty_access: "arrayList",
     apointment: "date"
 )
+
+Headers: {
+    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
+}
 ```
 
 > Response Object
@@ -228,7 +244,7 @@ POST https://adentech/patients
 
 ## Add/Post Patient Records
 
-### post generalExamination collections
+### add generalExamination collections
 
 #### examenEndobuccal collection
 
@@ -252,6 +268,10 @@ POST https://adentech/generalExamination/examenEndobuccal
     etat_muqueuses_gengival: "string",
     etat_muqueuses_autres_lesion: "string",
 )
+
+Headers: {
+    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
+}
 ```
 
 > Response Object
@@ -339,7 +359,7 @@ POST https://adentech/generalExamination/medicalAnamnese
 #### ----- collection
 
 ```
-POST https://adentech/generalExamination/-----
+GET https://adentech/-----/-----
 ```
 
 `Request Parameters`
@@ -349,7 +369,6 @@ POST https://adentech/generalExamination/-----
     patient_id: "string" <required>,
 )
 ```
-
 
 > Response Object
 ```
