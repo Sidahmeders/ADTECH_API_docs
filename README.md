@@ -228,7 +228,10 @@ POST https://adentech/patients
 
 ## Add/Post Patient Records
 
-### post generalExamination records
+### post generalExamination collections
+
+#### examenEndobuccal collection
+
 ```
 POST https://adentech/generalExamination/examenEndobuccal
 ```
@@ -236,8 +239,8 @@ POST https://adentech/generalExamination/examenEndobuccal
 `Request Parameters`
 ```
 (
-    user_id: "",
-    patient_id: "string",
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
     overture_buccal: "string",
     hygiene_buccaux_dentaires: "string",
     etat_muqueuses_levre_sup: "string",
@@ -250,4 +253,107 @@ POST https://adentech/generalExamination/examenEndobuccal
     etat_muqueuses_autres_lesion: "string",
 )
 ```
+
+> Response Object
+```
+{}
+```
+
+#### examenExobuccal collection
+
+```
+POST https://adentech/generalExamination/examenExobuccal
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    inspection_symetrie_faciale: "string",
+    inspection_coloration_teguments: "string",
+    inspection_autres: "string",
+    palpation_atm_douleur: "string",
+    palpation_atm_bruite_articulaire: "string",
+    palpation_atm_jeu_condyliene: "string",
+    palpation_atm_autres: "string",
+    palpation_chaine_ganglionaire_localisation: "string",
+    palpation_chaine_ganglionaire_nombre: "string",
+    palpation_chaine_ganglionaire_taille: "string",
+    palpation_chaine_ganglionaire_tempirature: "string",
+    palpation_muscles_masseter: "string",
+    palpation_muscles_temporal: "string",
+    palpation_muscles_pterygoidien_interne: "string",
+    palpation_muscles_pterygoidien_externe "string",
+)
+```
+
+> Response Object
+```
+{}
+```
+
+#### medicalAnamnese collection
+
+```
+POST https://adentech/generalExamination/medicalAnamnese
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    motif_consultation: "string",
+    mauvaise_habitude: "string",
+    AG_personnel_maladie: "string",
+    AG_personnel_traitement: "string",
+    AG_mere_maladie: "string",
+    AG_pere_traitement: "string",
+    AG_mere_traitement: "string",
+    AG_pere_maladie: "string",
+    AS_personnel_odf: "string",
+    AS_personnel_oce: "string",
+    AS_personnel_pcb: "string",
+    AS_personnel_proth: "string",
+    AS_personnel_paro: "string",
+    AS_mere_odf: "string",
+    AS_mere_oce: "string",
+    AS_mere_pcb: "string",
+    AS_mere_paro: "string",
+    AS_mere_proth: "string",
+    AS_pere_odf: "string",
+    AS_pere_oce: "string",
+    AS_pere_pcb: "string",
+    AS_pere_proth: "string",
+    AS_pere_paro: "string",
+    AS_autres: "string"
+)
+```
+
+> Response Object
+```
+{}
+```
+
+#### ----- collection
+
+```
+POST https://adentech/generalExamination/-----
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+)
+```
+
+
+> Response Object
+```
+{}
+```
+
 
