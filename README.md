@@ -306,6 +306,10 @@ POST https://adentech/generalExamination/examenExobuccal
     palpation_muscles_pterygoidien_interne: "string",
     palpation_muscles_pterygoidien_externe "string",
 )
+
+Headers: {
+    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
+}
 ```
 
 > Response Object
@@ -349,6 +353,10 @@ POST https://adentech/generalExamination/medicalAnamnese
     AS_pere_paro: "string",
     AS_autres: "string"
 )
+
+Headers: {
+    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
+}
 ```
 
 > Response Object
