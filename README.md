@@ -27,8 +27,7 @@ POST https://adentech/users/login
             birth_date: "date",
             email: "string", 
             profile_image: "buffer",
-            year_of_study: "integer",
-            phone_number: "integer"
+            phone_number: "integer",
             gender: "string",
             faculty: "string",
             country: "string",
@@ -80,7 +79,6 @@ POST https://adentech/users/register
             birth_date: "date",
             email: "string",
             profile_image: "buffer",
-            year_of_study: "integer",
             phone_number: "integer"
             gender: "string",
             faculty: "string",
