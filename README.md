@@ -248,7 +248,7 @@ Headers: { auth-token } <required>
 
 ## Add/Post Patient Records
 
-### ***add generalExamination collections***
+### *** add generalExamination collections ***
 
 #### examenEndobuccal collection
 
@@ -382,7 +382,7 @@ GET https://adentech/-----/-----
 ```
 
 
-### ***add generalExamination collections***
+### *** add OCE collections ***
 
 #### carieDentaire collection
 
