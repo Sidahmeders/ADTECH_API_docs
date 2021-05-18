@@ -531,7 +531,7 @@ Headers: { auth-token } <required>
 {}
 ```
 
-### *** add generalExamination collections ***
+### *** add ODF collections ***
 
 #### moulage collection
 
