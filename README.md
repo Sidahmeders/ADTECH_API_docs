@@ -917,3 +917,55 @@ Headers: { auth-token } <required>
 {}
 ```
 
+
+### *** add Prothese collections ***
+
+#### edentePartielle collection
+
+```
+POST https://adentech/prothese/edentePartielle
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    motif_consultation: "string",
+    kenedy_apelgate_maxillaire: "string",
+    kenedy_apelgate_mandibule: "string",
+    decision_therapeutique: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### edenteTotal collection
+
+```
+POST https://adentech/prothese/edenteTotal
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    motif_consultation: "string"
+    linda_maxillaire: "string"
+    linda_mandibule: "string"
+    decision_therapeutique: "string
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
