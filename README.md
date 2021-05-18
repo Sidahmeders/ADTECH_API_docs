@@ -374,13 +374,14 @@ GET https://adentech/-----/-----
     user_id: "string" <required>,
     patient_id: "string" <required>,
 )
+
+Headers: { auth-token } <required>
 ```
 
 > Response Object
 ```
 {}
 ```
-
 
 ### *** add OCE collections ***
 
@@ -467,7 +468,7 @@ POST https://adentech/oce/traumatismeDentaireDents
     diagnostic_complication_paro: "string",
     diagnostic_pulpaire: "string",
     decision_therapeutique: "string",
-    pronostic:"string"
+    pronostic: "string"
 )
 
 Headers: { auth-token } <required>
@@ -498,7 +499,7 @@ POST https://adentech/oce/traumatismeDentairePatient
     etat_general_pert_conscience: "string",
     etat_generale_nauses: "string",
     etat_generale_saignement: "string",
-    pronostic:"string"
+    pronostic: "string"
 )
 
 Headers: { auth-token } <required>
@@ -521,9 +522,220 @@ GET https://adentech/-----/-----
     user_id: "string" <required>,
     patient_id: "string" <required>,
 )
+
+Headers: { auth-token } <required>
 ```
 
 > Response Object
 ```
 {}
 ```
+
+### *** add generalExamination collections ***
+
+#### moulage collection
+
+```
+POST https://adentech/odf/moulage
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    maxillaire_forme: "string",
+    maxillaire_symetrie: "string",
+    maxillaire_profondeur_voute: "string",
+    maxillaire_malposition: "string",
+    maxillaire_ddm: "string",
+    maxillaire_indice_ponte_D4G4: "string",
+    maxillaire_indice_ponte_D6G6: "string",
+    maxillaire_indice_doumange: "string",
+    mandubule_forme: "string",
+    mandubule_symetrie: "string",
+    mandubule_malposition: "string",
+    mandubule_indice_pont_D4G4: "string",
+    mandubule_indice_pont_D6G6: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### anemnese collection
+
+```
+POST https://adentech/odf/anemnese
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    motif_consultation: "string",
+    antecedente_odf_duree: "string",
+    antecedente_odf_type: "string",
+    tics_habitude: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### diagnosticTraitement collection
+
+```
+POST https://adentech/odf/diagnosticTraitement
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    dp_class_squelettique: "string",
+    dp_forme_clinique: "string",
+    dp_typologie_faciale: "string",
+    dp_direction_croissance_faciale: "string",
+    dp_direction_croissance_mandibulaire: "string",
+    dp_anomalies_associees: "string",
+    diagnostic_etiologique: "string",
+    diagnostic_differentiel: "string",
+    plan_trt_objective_squeletique: "string",
+    plan_trt_objective_fonctionnels: "string",
+    plan_trt_objective_occlusaux: "string",
+    plan_trt_objective_esthetiques: "string",
+    plan_trt_principes_moyens: "string",
+    plan_trt_contension : "string",
+    plan_trt_pronostic: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### endobuccal collection
+
+```
+POST https://adentech/odf/endobuccal
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    hygien_bucaux_dentaire: "string",
+    probleme_paro: "string",
+    langue_volume: "string",
+    langue_situation: "string",
+    langue_frien_linguale: "string",
+    age_dentaire: "integer",
+    satde_dentitin: "string",
+    chemin_fermeture: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### exobuccal collection
+
+```
+POST https://adentech/odf/exobuccal
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+     symetrie_faciale: "string",
+    parallelisme_trois_ligne: "string",
+    typologie_facial: "string",
+    profile_izard: "string",
+    profile_ricketts: "string",
+    muscilature_joues: "string",
+    muscilature_levres_repos: "string",
+    muscilature_levres_fonction: "string",
+    sillons_slm: "string",
+    sillons_sng: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### resulteCepholomettrie collection
+
+```
+POST https://adentech/odf/exobuccal
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    rapport_cranio_faciaux_sagittaux_sna: "string",
+    rapport_cranio_faciaux_sagittaux_snb: "string",
+    rapport_cranio_faciaux_sagittaux_anb: "string",
+    rapport_cranio_faciaux_sagittaux_convexite: "string",
+    rapport_cranio_faciaux_sagittaux_se: "string",
+    rapport_cranio_faciaux_sagittaux_sl: "string",
+    rapport_cranio_faciaux_sagittaux_scg: "string",
+    rapport_cranio_faciaux_sagittaux_s_fpm: "string",
+    mensuration_basales_fpm_ena: "string",
+    mensuration_basales_at_chateau: "string",
+    mensuration_basales_longeur_mandibule: "string",
+    mensuration_basales_xipm: "string",
+    direction_croissance_fma_tweed: "string",
+    direction_croissance_axe_brodie: "string",
+    direction_croissance_axe_facial_Rickeets: "string",
+    mensurations_verticales_hes: "string",
+    mensurations_verticales_hei: "string",
+    mensurations_verticales_hauteur_ramale: "string",
+    mensurations_verticales_ena_xipm: "string",
+    papport_dento_squellettes_6ptv: "string",
+    rapport_dento_squelletique_if: "string",
+    rapport_dento_squellettes_im: "string",
+    rapport_dento_squellettes_ia_po_angle: "string",
+    rapport_dento_squellettes_ia_oo_distance: "string",
+    rapport_dento_squellettes_ia_po_angle: "string",
+    rapport_dento_squellettes_ia_po_distance: "string",
+    rapport_dento_dentaire_ii: "string",
+    esthetique_ls_ligne_e: "string",
+    esthetique_li_ligne_e: "string",
+    esthetique_angle_z: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
