@@ -146,7 +146,7 @@ POST https://adentech/users/patients/apointments
 `Request Parameters`
 ```
 (
-    user_id: "string" <required >(if dentist/user exist),
+    patient_id: "string" <required >(if patient exist),
     apointment: "date" <required>
 )
 
