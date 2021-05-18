@@ -75,6 +75,19 @@ POST https://adentech/users/register
         user: {
             _id: "string",
             patients_id: "arrayList",
+            first_name: "string",
+            last_name: "string", 
+            birth_date: "date",
+            email: "string",
+            profile_image: "buffer",
+            year_of_study: "integer",
+            phone_number: "integer"
+            gender: "string",
+            faculty: "string",
+            country: "string",
+            year_of_study: "integer",
+            grade: "string",
+            specialty: "string",
             role: "string"
         }
     }
@@ -92,9 +105,7 @@ GET https://adentech/users/patients
     user_id: "string" <required>
 )
 
-Headers: {
-    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
-}
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -139,9 +150,7 @@ POST https://adentech/users/patients/apointments
     apointment: "date" <required>
 )
 
-Headers: {
-    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
-}
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -169,9 +178,7 @@ GET https://adentech/users/patients/apointments
     user_id: "string" <required>
 )
 
-Headers: {
-    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
-}
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -210,9 +217,7 @@ POST https://adentech/patients
     apointment: "date"
 )
 
-Headers: {
-    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
-}
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -243,7 +248,7 @@ Headers: {
 
 ## Add/Post Patient Records
 
-### add generalExamination collections
+### ***add generalExamination collections***
 
 #### examenEndobuccal collection
 
@@ -268,9 +273,7 @@ POST https://adentech/generalExamination/examenEndobuccal
     etat_muqueuses_autres_lesion: "string",
 )
 
-Headers: {
-    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
-}
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -306,9 +309,7 @@ POST https://adentech/generalExamination/examenExobuccal
     palpation_muscles_pterygoidien_externe "string",
 )
 
-Headers: {
-    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
-}
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -353,9 +354,7 @@ POST https://adentech/generalExamination/medicalAnamnese
     AS_autres: "string"
 )
 
-Headers: {
-    auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c" <required>
-}
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -382,10 +381,13 @@ GET https://adentech/-----/-----
 {}
 ```
 
-#### ----- collection
+
+### ***add generalExamination collections***
+
+#### carieDentaire collection
 
 ```
-GET https://adentech/-----/-----
+POST https://adentech/oce/carieDentaire
 ```
 
 `Request Parameters`
@@ -393,7 +395,113 @@ GET https://adentech/-----/-----
 (
     user_id: "string" <required>,
     patient_id: "string" <required>,
+    tooth_number: "integer",
+    motif_consultation: "string",
+    histoire_maladie: "string",
+    class_black: "integer",
+    class_sit_sta: "string",
+    diagnostic_positive: "string",
+    diagnostic_etiologique: "string",
+    diagnostic_différentiel: "string",
+    decision_therapeutique: "string"
 )
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### signsEtRadio collection
+
+```
+POST https://adentech/oce/signsEtRadio
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    tooth_number: "integer",
+    sign_subjective_provoque: "string",
+    sign_subjective_spontanne: "string",
+    sign_subjective_autres: "string",
+    sign_objective_vitalite: "string",
+    sign_objective_percussion_axial: "string",
+    sign_objective_percussion_lateral: "string",
+    sign_objective_palpation_fond_vestibule: "string",
+    sign_objective_mobilite: "string",
+    radio_panoramique: "string",
+    radio_retroslviolsire_couronne: "string",
+    radio_retroslviolsire_racine: "string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### traumatismeDentaireDents collection
+
+```
+POST https://adentech/oce/traumatismeDentaireDents
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    tooth_number: "integer",
+    description_tiente: "string",
+    description_etat_dent: "string",
+    description_trait_fracture: "string",
+    lesion_associees: "string",
+    diagnostic_tissu_dur_pulpe: "string",
+    diagnostic_complication_paro: "string",
+    diagnostic_pulpaire: "string",
+    decision_therapeutique: "string",
+    pronostic:"string"
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{}
+```
+
+#### traumatismeDentairePatient collection
+
+```
+POST https://adentech/oce/traumatismeDentairePatient
+```
+
+`Request Parameters`
+```
+(
+    user_id: "string" <required>,
+    patient_id: "string" <required>,
+    motif_consultation: "string",
+    etat_general_actuel: "string",
+    date_traumatisme: "date",
+    cause_tarumatiame: "string",
+    circonstance_traumatisme: "string",
+    etat_generale_cephale: "string",
+    etat_general_pert_conscience: "string",
+    etat_generale_nauses: "string",
+    etat_generale_saignement: "string",
+    pronostic:"string"
+)
+
+Headers: { auth-token } <required>
 ```
 
 > Response Object
@@ -419,4 +527,3 @@ GET https://adentech/-----/-----
 ```
 {}
 ```
-
