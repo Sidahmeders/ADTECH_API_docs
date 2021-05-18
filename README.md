@@ -1,12 +1,11 @@
 # A-Dentech Endpoints
 
-
 ## **SignIn/get a Single User**
 ```
 POST https://adentech/users/login
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```    
 (
     email: "string" <required>,
@@ -45,7 +44,7 @@ POST https://adentech/users/login
 POST https://adentech/users/register
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```    
 (
     first_name: "string" <required>,
@@ -94,10 +93,10 @@ POST https://adentech/users/register
 
 ## **Return/Get all the patients a user have**
 ```
-GET https://adentech/users/patients
+GET https://adentech/users/patients?user_id
 ```
 
-`Request Parameters`
+`Request Query Parameters`
 ```
 (
     user_id: "string" <required>
@@ -141,7 +140,7 @@ Headers: { auth-token } <required>
 POST https://adentech/users/patients/apointments
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     patient_id: "string" <required >(if patient exist),
@@ -167,10 +166,10 @@ Headers: { auth-token } <required>
 
 ## Return/Get all the apointments a user have
 ```
-GET https://adentech/users/patients/apointments
+GET https://adentech/users/patients/apointments?user_id
 ```
 
-`Request Parameters`
+`Request Query Parameters`
 ```
 (
     user_id: "string" <required>
@@ -198,7 +197,7 @@ Headers: { auth-token } <required>
 POST https://adentech/patients
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -254,7 +253,7 @@ Headers: { auth-token } <required>
 POST https://adentech/generalExamination/examenEndobuccal
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -285,7 +284,7 @@ Headers: { auth-token } <required>
 POST https://adentech/generalExamination/examenExobuccal
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -321,7 +320,7 @@ Headers: { auth-token } <required>
 POST https://adentech/generalExamination/medicalAnamnese
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -360,16 +359,24 @@ Headers: { auth-token } <required>
 {}
 ```
 
-#### ----- collection
+### *** get generalExamination collections ***
 
+#### examenEndobuccal collection
 ```
-GET https://adentech/-----/-----
+GET https://adentech/generalExamination/examenEndobuccal?patient_id
+```
+### examenExobuccal collection
+```
+GET https://adentech/generalExamination/examenExobuccal?patient_id
+```
+### medicalAnamnese collection
+```
+GET https://adentech/generalExamination/medicalAnamnese?patient_id
 ```
 
-`Request Parameters`
+`Request Query Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
 )
 
@@ -378,7 +385,15 @@ Headers: { auth-token } <required>
 
 > Response Object
 ```
-{}
+{
+    data: {
+        patientRecords: [
+            { ... },
+            { ... },
+            ... 
+        ]
+    }
+}
 ```
 
 ### *** add OCE collections ***
@@ -389,7 +404,7 @@ Headers: { auth-token } <required>
 POST https://adentech/oce/carieDentaire
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -419,7 +434,7 @@ Headers: { auth-token } <required>
 POST https://adentech/oce/signsEtRadio
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -452,7 +467,7 @@ Headers: { auth-token } <required>
 POST https://adentech/oce/traumatismeDentaireDents
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -483,7 +498,7 @@ Headers: { auth-token } <required>
 POST https://adentech/oce/traumatismeDentairePatient
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -514,7 +529,7 @@ Headers: { auth-token } <required>
 GET https://adentech/-----/-----
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -537,7 +552,7 @@ Headers: { auth-token } <required>
 POST https://adentech/odf/moulage
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -571,7 +586,7 @@ Headers: { auth-token } <required>
 POST https://adentech/odf/anemnese
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -596,7 +611,7 @@ Headers: { auth-token } <required>
 POST https://adentech/odf/diagnosticTraitement
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -632,7 +647,7 @@ Headers: { auth-token } <required>
 POST https://adentech/odf/endobuccal
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -661,7 +676,7 @@ Headers: { auth-token } <required>
 POST https://adentech/odf/exobuccal
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -692,7 +707,7 @@ Headers: { auth-token } <required>
 POST https://adentech/odf/exobuccal
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -745,7 +760,7 @@ Headers: { auth-token } <required>
 POST https://adentech/paro/examenGingival
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -778,7 +793,7 @@ Headers: { auth-token } <required>
 POST https://adentech/paro/examenSondage
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -802,14 +817,13 @@ Headers: { auth-token } <required>
 {}
 ```
 
-
 #### indices collection
 
 ```
 POST https://adentech/paro/indices
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -852,7 +866,7 @@ Headers: { auth-token } <required>
 POST https://adentech/paro/interpretationRadiologic
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -890,7 +904,7 @@ Headers: { auth-token } <required>
 POST https://adentech/paro/interpretationRadiologic
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -915,7 +929,6 @@ Headers: { auth-token } <required>
 {}
 ```
 
-
 ### *** add Prothese collections ***
 
 #### edentePartielle collection
@@ -924,7 +937,7 @@ Headers: { auth-token } <required>
 POST https://adentech/prothese/edentePartielle
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
@@ -949,7 +962,7 @@ Headers: { auth-token } <required>
 POST https://adentech/prothese/edenteTotal
 ```
 
-`Request Parameters`
+`Request Body Parameters`
 ```
 (
     user_id: "string" <required>,
