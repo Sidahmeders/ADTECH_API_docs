@@ -953,11 +953,46 @@ Headers: { auth-token } <required>
 ```
 {
     data: {
-        patientRecords: [
-            { ... },
-            { ... },
-            ... 
-        ]
+        patientRecord: { ... }
+    }
+}
+```
+
+
+## update Patients Record
+
+### *** update generalExamination collections ***
+
+#### examenEndobuccal collection
+```
+PUT https://adentech/generalExamination/examenEndobuccal/update
+```
+### examenExobuccal collection
+```
+PUT https://adentech/generalExamination/examenExobuccal/update
+```
+### medicalAnamnese collection
+```
+PUT https://adentech/generalExamination/medicalAnamnese/update
+```
+
+`Request Query Parameters`
+```
+(
+    patient_id: "string" <required>,
+    [record_entry1]: ...,
+    [record_enrty2]: ...,
+    ....
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{
+    data: {
+        patientRecord: { ... }
     }
 }
 ```
