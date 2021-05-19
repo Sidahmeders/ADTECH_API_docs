@@ -359,43 +359,6 @@ Headers: { auth-token } <required>
 {}
 ```
 
-### *** get generalExamination collections ***
-
-#### examenEndobuccal collection
-```
-GET https://adentech/generalExamination/examenEndobuccal?patient_id
-```
-### examenExobuccal collection
-```
-GET https://adentech/generalExamination/examenExobuccal?patient_id
-```
-### medicalAnamnese collection
-```
-GET https://adentech/generalExamination/medicalAnamnese?patient_id
-```
-
-`Request Query Parameters`
-```
-(
-    patient_id: "string" <required>,
-)
-
-Headers: { auth-token } <required>
-```
-
-> Response Object
-```
-{
-    data: {
-        patientRecords: [
-            { ... },
-            { ... },
-            ... 
-        ]
-    }
-}
-```
-
 ### *** add OCE collections ***
 
 #### carieDentaire collection
@@ -513,27 +476,6 @@ POST https://adentech/oce/traumatismeDentairePatient
     etat_generale_nauses: "string",
     etat_generale_saignement: "string",
     pronostic: "string"
-)
-
-Headers: { auth-token } <required>
-```
-
-> Response Object
-```
-{}
-```
-
-#### ----- collection
-
-```
-GET https://adentech/-----/-----
-```
-
-`Request Body Parameters`
-```
-(
-    user_id: "string" <required>,
-    patient_id: "string" <required>,
 )
 
 Headers: { auth-token } <required>
@@ -979,4 +921,43 @@ Headers: { auth-token } <required>
 > Response Object
 ```
 {}
+```
+
+## get Patients Record
+
+### *** get generalExamination collections ***
+
+#### examenEndobuccal collection
+```
+GET https://adentech/generalExamination/examenEndobuccal?patient_id
+```
+### examenExobuccal collection
+```
+GET https://adentech/generalExamination/examenExobuccal?patient_id
+```
+### medicalAnamnese collection
+```
+GET https://adentech/generalExamination/medicalAnamnese?patient_id
+```
+
+`Request Query Parameters`
+```
+(
+    patient_id: "string" <required>,
+)
+
+Headers: { auth-token } <required>
+```
+
+> Response Object
+```
+{
+    data: {
+        patientRecords: [
+            { ... },
+            { ... },
+            ... 
+        ]
+    }
+}
 ```
