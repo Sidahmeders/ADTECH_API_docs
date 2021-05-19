@@ -243,7 +243,7 @@ Headers: { auth-token } <required>
 }
 ```
 
-## Add/Post Patient Records
+## Add/Post Patients Record
 
 ### *** add generalExamination collections ***
 
