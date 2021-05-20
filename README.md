@@ -123,7 +123,7 @@ Headers: { auth-token } <required>
                 marital_status: "string",
                 job: "string",
                 faculty_access: "string",
-                apointment: "date"
+                appointment: "date"
             },
             {
                 ...
@@ -135,16 +135,16 @@ Headers: { auth-token } <required>
 }
 ```
 
-## Add apointment to an existing patient OR create a new patient with apointment
+## Add appointment to an existing patient OR create a new patient with appointment
 ```
-POST https://adentech/users/patients/apointments
+POST https://adentech/users/patients/appointments
 ```
 
 `Request Body Parameters`
 ```
 (
     patient_id: "string" <required >(if patient exist),
-    apointment: "date" <required>
+    appointment: "date" <required>
 )
 
 Headers: { auth-token } <required>
@@ -157,16 +157,16 @@ Headers: { auth-token } <required>
         patient: {
             _id: "string",
             full_name: "string",
-            apointment: "date",
+            appointment: "date",
             phone_number: "integer"
         }
     }
 }
 ```
 
-## Return/Get all the apointments a user have
+## Return/Get all the appointments a user have
 ```
-GET https://adentech/users/patients/apointments?user_id
+GET https://adentech/users/patients/appointments?user_id
 ```
 
 `Request Query Parameters`
@@ -184,7 +184,7 @@ Headers: { auth-token } <required>
     data: {
         patient: {
             _id: "string",
-            apointment: "date",
+            appointment: "date",
             full_name: "string",
             phone_number: "integer"
         }
@@ -211,7 +211,7 @@ POST https://adentech/patients
     marital_status: "string",
     job: "string,
     faculty_access: "arrayList",
-    apointment: "date"
+    appointment: "date"
 )
 
 Headers: { auth-token } <required>
@@ -234,7 +234,7 @@ Headers: { auth-token } <required>
             marital_status: "string",
             job: "string",
             faculty_access: "arrayList",
-            apointment: "date",
+            appointment: "date",
             date_of_modification: "date",
             date_of_creation: "date",
             __v: "integer"
