@@ -135,7 +135,7 @@ Headers: { auth-token } <required>
 }
 ```
 
-## Add appointment to an existing patient OR create a new patient with appointment
+## Add/Update appointment to an existing patient OR create a new patient with appointment
 ```
 POST https://adentech/users/patients/appointments
 ```
@@ -143,7 +143,8 @@ POST https://adentech/users/patients/appointments
 `Request Body Parameters`
 ```
 (
-    patient_id: "string" <required >(if patient exist),
+    patient_id: "string" <required> (if patient exist),
+    user_id: "string" <required> (if patient_does not exist),
     appointment: "date" <required>
 )
 
@@ -182,12 +183,15 @@ Headers: { auth-token } <required>
 ```
 {
     data: {
-        patient: {
-            _id: "string",
-            appointment: "date",
-            full_name: "string",
-            phone_number: "integer"
-        }
+        patients: [
+            {
+                _id: "string",
+                appointment: "date",
+                full_name: "string",
+                phone_number: "integer"
+            },
+            { ... }
+        ]
     }
 }
 ```
