@@ -969,15 +969,15 @@ Headers: { auth-token } <required>
 
 #### examenEndobuccal collection
 ```
-PUT https://adentech/generalExamination/examenEndobuccal/update
+PUT https://adentech/generalExamination/examenEndobuccal
 ```
 ### examenExobuccal collection
 ```
-PUT https://adentech/generalExamination/examenExobuccal/update
+PUT https://adentech/generalExamination/examenExobuccal
 ```
 ### medicalAnamnese collection
 ```
-PUT https://adentech/generalExamination/medicalAnamnese/update
+PUT https://adentech/generalExamination/medicalAnamnese
 ```
 
 `Request Query Parameters`
