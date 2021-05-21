@@ -57,7 +57,7 @@ POST https://adentech/users/register
     identity_card: "buffer" <required>,
     phone_number: "integer",
     gender: "string" <required>,
-    faculty: "string",
+    faculty: "string" <required>,
     country: "string",
     year_of_study: "integer",
     grade: "string",
