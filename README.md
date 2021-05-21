@@ -1,4 +1,4 @@
-# A-Dentech Endpoints
+# A-Dentech mobile-app Endpoints
 
 ## **SignIn/get a Single User**
 ```
@@ -21,10 +21,10 @@ POST https://adentech/users/login
         user: {
             _id: "string",
             patients_id: "arrayList",
-            first_name: "string", 
-            last_name: "string", 
+            first_name: "string",
+            last_name: "string",
             birth_date: "date",
-            email: "string", 
+            email: "string",
             profile_image: "buffer",
             phone_number: "integer",
             gender: "string",
@@ -627,7 +627,7 @@ POST https://adentech/odf/exobuccal
 (
     user_id: "string" <required>,
     patient_id: "string" <required>,
-     symetrie_faciale: "string",
+    symetrie_faciale: "string",
     parallelisme_trois_ligne: "string",
     typologie_facial: "string",
     profile_izard: "string",
@@ -997,6 +997,17 @@ Headers: { auth-token } <required>
 {
     data: {
         patientRecord: { ... }
+    }
+}
+```
+
+## error response Object
+
+```
+{
+    error: {
+        type: "error type",
+        messgae: "error message"
     }
 }
 ```
