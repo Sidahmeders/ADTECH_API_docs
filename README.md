@@ -85,10 +85,16 @@ POST https://adentech/users/register
             year_of_study: "integer",
             grade: "string",
             specialty: "string",
-            role: "string"
+            role: "string" < unAuthorized, student, professor >
         }
     }
 }
+```
+> ***Users Role***
+```
+unAuthorized: can't create/update/delete new patients or patients record
+student: can create/update new patients or patients record
+professor: can create/update/delete patients record, plus some related utilities based on specialty (odf-chart, cephalometric-chart, etc...).
 ```
 
 ## **Return/Get all the patients a user have**
