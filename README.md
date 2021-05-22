@@ -93,7 +93,7 @@ POST https://adentech/users/register
 ```
 unAuthorized: can't create/update/delete new patients or patients record
 student: can create/update new patients and patients record
-professor: can create/update new patients patients record, plus some related utilities based on specialty (odf-chart, cephalometric-chart, etc...).
+professor: can create/update new patients and patients record, plus some related utilities based on specialty (odf-chart, cephalometric-chart, etc...).
 ```
 
 ## **Return/Get all the patients a user have**
