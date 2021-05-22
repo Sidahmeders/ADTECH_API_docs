@@ -52,7 +52,6 @@ POST https://adentech/users/register
     birth_date: "date" <required>,
     email: "string" <required>,
     password: "string" <required>,
-    password2: "string" <required>,
     profile_image: "buffer" <required>,
     identity_card: "buffer" <required>,
     phone_number: "integer",
