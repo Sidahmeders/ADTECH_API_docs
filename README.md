@@ -53,7 +53,7 @@ POST https://adentech/users/register
     email: "string" <required>,
     password: "string" <required>,
     password2: "string" <required>,
-    profile_image: "buffer",
+    profile_image: "buffer" <required>,
     identity_card: "buffer" <required>,
     phone_number: "integer",
     gender: "string" <required>,
