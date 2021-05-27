@@ -89,6 +89,7 @@ POST https://adentech/users/register
     }
 }
 ```
+
 > ***Users Role***
 ```
 unAuthorized: can't create/update/delete new patients or patients record
@@ -127,7 +128,7 @@ Headers: { auth-token } <required>
                 email: "string",
                 marital_status: "string",
                 job: "string",
-                faculty_access: "string",
+                specialty_access: "arrayList",
                 appointment: "date"
             },
             {
@@ -219,7 +220,7 @@ POST https://adentech/patients
     email: "string",
     marital_status: "string",
     job: "string,
-    faculty_access: "arrayList",
+    specialty_access: "arrayList",
     appointment: "date"
 )
 
@@ -242,7 +243,7 @@ Headers: { auth-token } <required>
             email: "string",
             marital_status: "string",
             job: "string",
-            faculty_access: "arrayList",
+            specialty_access: "arrayList",
             appointment: "date",
             date_of_modification: "date",
             date_of_creation: "date",
