@@ -203,14 +203,14 @@ POST https://adentech/patients
 (
     first_name: "string" <required>,
     last_name: "string" <required>,
-    gender: "string" <required>,
+    gender: "string" <required> [options]< male, female >,
     age: "integer" <required>,
     address: "string",
     phone_number: "integer",
     email: "string",
-    marital_status: "string",
+    marital_status: "string" [options]< single, married >,
     job: "string,
-    specialty_access: "arrayList",
+    specialty_access: "arrayList" [options]< OCE, ODF, PARO, PROTH, PCB >,
     appointment: "date"
 )
 
