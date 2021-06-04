@@ -55,12 +55,12 @@ POST https://adentech/users/register
     profile_image: "buffer" <required>,
     identity_card: "buffer" <required>,
     phone_number: "integer",
-    gender: "string" <required>,
+    gender: "string" <required> [options]< male, female >,
     faculty: "string" <required>,
     country: "string",
     year_of_study: "integer",
-    grade: "string",
-    specialty: "string"
+    grade: "string" [options] < student, resident, assistant, master_assistant, professor >,
+    specialty: "string" [options]< OCE, ODF, PARO, PROTH, PCB >
 )
 ```
 
@@ -84,7 +84,7 @@ POST https://adentech/users/register
             year_of_study: "integer",
             grade: "string",
             specialty: "string",
-            role: "string" < unAuthorized, student, professor >
+            role: "string" [options]< unAuthorized, student, professor >
         }
     }
 }
@@ -104,10 +104,6 @@ GET https://adentech/users/patients?user_id
 
 `Request Query Parameters`
 ```
-(
-    user_id: "string" <required>
-)
-
 Headers: { auth-token } <required>
 ```
 
@@ -150,7 +146,6 @@ POST https://adentech/users/patients/appointments
 ```
 (
     patient_id: "string" <required> (if patient exist),
-    user_id: "string" <required> (if patient_does not exist),
     appointment: "date" <required>
 )
 
@@ -178,10 +173,6 @@ GET https://adentech/users/patients/appointments?user_id
 
 `Request Query Parameters`
 ```
-(
-    user_id: "string" <required>
-)
-
 Headers: { auth-token } <required>
 ```
 
@@ -210,7 +201,6 @@ POST https://adentech/patients
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     first_name: "string" <required>,
     last_name: "string" <required>,
     gender: "string" <required>,
@@ -266,7 +256,6 @@ POST https://adentech/generalExamination/examenEndobuccal
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     overture_buccal: "string",
     hygiene_buccaux_dentaires: "string",
@@ -297,7 +286,6 @@ POST https://adentech/generalExamination/examenExobuccal
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     inspection_symetrie_faciale: "string",
     inspection_coloration_teguments: "string",
@@ -333,7 +321,6 @@ POST https://adentech/generalExamination/medicalAnamnese
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     motif_consultation: "string",
     mauvaise_habitude: "string",
@@ -380,7 +367,6 @@ POST https://adentech/oce/carieDentaire
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     tooth_number: "integer",
     motif_consultation: "string",
@@ -410,7 +396,6 @@ POST https://adentech/oce/signsEtRadio
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     tooth_number: "integer",
     sign_subjective_provoque: "string",
@@ -443,7 +428,6 @@ POST https://adentech/oce/traumatismeDentaireDents
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     tooth_number: "integer",
     description_tiente: "string",
@@ -474,7 +458,6 @@ POST https://adentech/oce/traumatismeDentairePatient
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     motif_consultation: "string",
     etat_general_actuel: "string",
@@ -507,7 +490,6 @@ POST https://adentech/odf/moulage
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     maxillaire_forme: "string",
     maxillaire_symetrie: "string",
@@ -541,7 +523,6 @@ POST https://adentech/odf/anemnese
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     motif_consultation: "string",
     antecedente_odf_duree: "string",
@@ -566,7 +547,6 @@ POST https://adentech/odf/diagnosticTraitement
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     dp_class_squelettique: "string",
     dp_forme_clinique: "string",
@@ -602,7 +582,6 @@ POST https://adentech/odf/endobuccal
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     hygien_bucaux_dentaire: "string",
     probleme_paro: "string",
@@ -631,7 +610,6 @@ POST https://adentech/odf/exobuccal
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     symetrie_faciale: "string",
     parallelisme_trois_ligne: "string",
@@ -662,7 +640,6 @@ POST https://adentech/odf/exobuccal
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     rapport_cranio_faciaux_sagittaux_sna: "string",
     rapport_cranio_faciaux_sagittaux_snb: "string",
@@ -715,7 +692,6 @@ POST https://adentech/paro/examenGingival
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     sector_gingival: "string",
     contour: "string",
@@ -748,7 +724,6 @@ POST https://adentech/paro/examenSondage
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     pv1: "string",
     pv2: "string",
@@ -778,7 +753,6 @@ POST https://adentech/paro/indices
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     insertion_frien_sup: "string",
     insertion_frien_inf: "string",
@@ -821,7 +795,6 @@ POST https://adentech/paro/interpretationRadiologic
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     desmodente: "string",
     lamina_dura: "string",
@@ -859,7 +832,6 @@ POST https://adentech/paro/interpretationRadiologic
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     diagnostic_etiologique: "string",
     diagnostic_positive: "string",
@@ -892,7 +864,6 @@ POST https://adentech/prothese/edentePartielle
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     motif_consultation: "string",
     kenedy_apelgate_maxillaire: "string",
@@ -917,7 +888,6 @@ POST https://adentech/prothese/edenteTotal
 `Request Body Parameters`
 ```
 (
-    user_id: "string" <required>,
     patient_id: "string" <required>,
     motif_consultation: "string"
     linda_maxillaire: "string"
