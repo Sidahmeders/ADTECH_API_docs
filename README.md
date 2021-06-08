@@ -58,7 +58,7 @@ POST https://adentech/users/register
     gender: "string" <required> [options]< male, female >,
     faculty: "string" <required>,
     country: "string",
-    year_of_study: "integer",
+    year_of_study: "integer" < 1-st, 2-nd, 3-rd, 4-th, 5-th, 6-th >,
     grade: "string" [options] < student, resident, assistant, master_assistant, professor >,
     specialty: "string" [options]< OCE, ODF, PARO, PROTH, PCB >
 )
@@ -84,7 +84,7 @@ POST https://adentech/users/register
             year_of_study: "integer",
             grade: "string",
             specialty: "string",
-            role: "string" [options]< unAuthorized, student, professor >
+            role: "string" [options]< _unAuthorized, student, professor >
         }
     }
 }
