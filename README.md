@@ -60,7 +60,7 @@ POST https://adentech/users/register
     country: "string",
     year_of_study: "integer" < 1-st, 2-nd, 3-rd, 4-th, 5-th, 6-th >,
     grade: "string" [options] < student, resident, assistant, master_assistant, professor >,
-    specialty: "string" [options]< OCE, ODF, PARO, PROTH, PCB >
+    specialty: "string" [options]< OCE, ODF, PARO, PROTHESE, PCB >
 )
 ```
 
@@ -210,7 +210,7 @@ POST https://adentech/patients
     email: "string",
     marital_status: "string" [options]< single, married >,
     job: "string,
-    specialty_access: "arrayList" [options]< OCE, ODF, PARO, PROTH, PCB >,
+    specialty_access: "arrayList" [options]< OCE, ODF, PARO, PROTHESE, PCB >,
     appointment: "date"
 )
 
