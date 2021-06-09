@@ -495,15 +495,15 @@ POST https://adentech/odf/moulage
     maxillaire_symetrie: "string",
     maxillaire_profondeur_voute: "string",
     maxillaire_malposition: "string",
-    maxillaire_ddm: "string",
-    maxillaire_indice_ponte_D4G4: "string",
-    maxillaire_indice_ponte_D6G6: "string",
-    maxillaire_indice_doumange: "string",
+    maxillaire_ddm: "integer",
+    maxillaire_indice_ponte_D4G4: "integer",
+    maxillaire_indice_ponte_D6G6: "integer",
+    maxillaire_indice_doumange: "integer",
     mandubule_forme: "string",
     mandubule_symetrie: "string",
     mandubule_malposition: "string",
-    mandubule_indice_pont_D4G4: "string",
-    mandubule_indice_pont_D6G6: "string"
+    mandubule_indice_pont_D4G4: "integer",
+    mandubule_indice_pont_D6G6: "integer"
 )
 
 Headers: { auth-token } <required>
@@ -526,7 +526,7 @@ POST https://adentech/odf/anemnese
     patient_id: "string" <required>,
     motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
     antecedente_odf_duree: "string",
-    antecedente_odf[anything]pe: "string",
+    antecedente_odf_type: "string",
     tics_habitude: "string"
 )
 
@@ -548,21 +548,21 @@ POST https://adentech/odf/diagnosticTraitement
 ```
 (
     patient_id: "string" <required>,
-    dp_class_squelettique: "string",
-    dp_forme_clinique: "string",
-    dp_typologie_faciale: "string",
-    dp_direction_croissance_faciale: "string",
-    dp_direction_croissance_mandibulaire: "string",
-    dp_anomalies_associees: "string",
-    diagnostic_etiologique: "string",
-    diagnostic_differentiel: "string",
-    plan_trt_objective_squeletique: "string",
-    plan_trt_objective_fonctionnels: "string",
-    plan_trt_objective_occlusaux: "string",
-    plan_trt_objective_esthetiques: "string",
-    plan_trt_principes_moyens: "string",
-    plan_trt_contension : "string",
-    plan_trt_pronostic: "string"
+    dp_class_squelettique: "string" <required> [options]<cl1, cl2, cl3>,
+    dp_forme_clinique: "string" <required>,
+    dp_typologie_faciale: "string" <required> [options]<open_bite, normo_bite, deep_bite>,
+    dp_direction_croissance_faciale: "string" <required> [options]<anterieur, posterieur, moyenne>,
+    dp_direction_croissance_mandibulaire: "string" <required> [options]<anterieur, posterieur, moyenne>,
+    dp_anomalies_associees: "string" <required>,
+    diagnostic_etiologique: "string" <required>,
+    diagnostic_differentiel: "string" <required>,
+    plan_trt_objective_squeletique: "string" <required>,
+    plan_trt_objective_fonctionnels: "string" <required>,
+    plan_trt_objective_occlusaux: "string" <required>,
+    plan_trt_objective_esthetiques: "string" <required>,
+    plan_trt_principes_moyens: "string" <required>,
+    plan_trt_contension : "string" <required>,
+    plan_trt_pronostic: "string" <required>
 )
 
 Headers: { auth-token } <required>
@@ -583,8 +583,8 @@ POST https://adentech/odf/endobuccal
 ```
 (
     patient_id: "string" <required>,
-    hygien_bucaux_dentaire: "string",
-    probleme_paro: "string",
+    hygien_bucaux_dentaire: "string" <required> [options]<mauvais, moyenne, bon>,
+    probleme_paro: "string" [options]<oui, no>,
     langue_volume: "string",
     langue_situation: "string",
     langue_frien_linguale: "string",
@@ -634,43 +634,43 @@ Headers: { auth-token } <required>
 #### resulteCepholomettrie collection
 
 ```
-POST https://adentech/odf/exobuccal
+POST https://adentech/odf/resulteCepholomettrie
 ```
 
 `Request Body Parameters`
 ```
 (
     patient_id: "string" <required>,
-    rapport_cranio_faciaux_sagittaux_sna: "string",
-    rapport_cranio_faciaux_sagittaux_snb: "string",
-    rapport_cranio_faciaux_sagittaux_anb: "string",
-    rapport_cranio_faciaux_sagittaux_convexite: "string",
-    rapport_cranio_faciaux_sagittaux_se: "string",
-    rapport_cranio_faciaux_sagittaux_sl: "string",
-    rapport_cranio_faciaux_sagittaux_scg: "string",
-    rapport_cranio_faciaux_sagittaux_s_fpm: "string",
-    mensuration_basales_fpm_ena: "string",
-    mensuration_basales_at_chateau: "string",
-    mensuration_basales_longeur_mandibule: "string",
-    mensuration_basales_xipm: "string",
-    direction_croissance_fma_tweed: "string",
-    direction_croissance_axe_brodie: "string",
-    direction_croissance_axe_facial_Rickeets: "string",
-    mensurations_verticales_hes: "string",
-    mensurations_verticales_hei: "string",
-    mensurations_verticales_hauteur_ramale: "string",
-    mensurations_verticales_ena_xipm: "string",
-    papport_dento_squellettes_6ptv: "string",
-    rapport_dento_squelletique_if: "string",
-    rapport_dento_squellettes_im: "string",
-    rapport_dento_squellettes_ia_po_angle: "string",
-    rapport_dento_squellettes_ia_oo_distance: "string",
-    rapport_dento_squellettes_ia_po_angle: "string",
-    rapport_dento_squellettes_ia_po_distance: "string",
-    rapport_dento_dentaire_ii: "string",
-    esthetique_ls_ligne_e: "string",
-    esthetique_li_ligne_e: "string",
-    esthetique_angle_z: "string"
+    rapport_cranio_faciaux_sagittaux_sna: "integer",
+    rapport_cranio_faciaux_sagittaux_snb: "integer",
+    rapport_cranio_faciaux_sagittaux_anb: "integer",
+    rapport_cranio_faciaux_sagittaux_convexite: "integer",
+    rapport_cranio_faciaux_sagittaux_se: "integer",
+    rapport_cranio_faciaux_sagittaux_sl: "integer",
+    rapport_cranio_faciaux_sagittaux_scg: "integer",
+    rapport_cranio_faciaux_sagittaux_s_fpm: "integer",
+    mensuration_basales_fpm_ena: "integer",
+    mensuration_basales_at_chateau: "integer",
+    mensuration_basales_longeur_mandibule: "integer",
+    mensuration_basales_xipm: "integer",
+    direction_croissance_fma_tweed: "integer",
+    direction_croissance_axe_brodie: "integer",
+    direction_croissance_axe_facial_Rickeets: "integer",
+    mensurations_verticales_hes: "integer",
+    mensurations_verticales_hei: "integer",
+    mensurations_verticales_hauteur_ramale: "integer",
+    mensurations_verticales_ena_xipm: "integer",
+    papport_dento_squellettes_6ptv: "integer",
+    rapport_dento_squelletique_if: "integer",
+    rapport_dento_squellettes_im: "integer",
+    rapport_dento_squellettes_ia_po_angle: "integer",
+    rapport_dento_squellettes_ia_oo_distance: "integer",
+    rapport_dento_squellettes_ia_po_angle: "integer",
+    rapport_dento_squellettes_ia_po_distance: "integer",
+    rapport_dento_dentaire_ii: "integer",
+    esthetique_ls_ligne_e: "integer",
+    esthetique_li_ligne_e: "integer",
+    esthetique_angle_z: "integer"
 )
 
 Headers: { auth-token } <required>
@@ -867,7 +867,7 @@ POST https://adentech/prothese/edentePartielle
     patient_id: "string" <required>,
     motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
     kenedy_apelgate_maxillaire: "string",
-    kenedy_ape[anything]te_mandibule: "string",
+    kenedy_apelgate_mandibule: "string",
     decision_therapeutique: "string"
 )
 
