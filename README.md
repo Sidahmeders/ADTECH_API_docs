@@ -257,15 +257,15 @@ POST https://adentech/generalExamination/examenEndobuccal
 ```
 (
     patient_id: "string" <required>,
-    overture_buccal: "string",
-    hygiene_buccaux_dentaires: "string",
-    etat_muqueuses_levre_sup: "string",
-    etat_muqueuses_levre_inf: "string",
-    etat_muqueuses_jugale: "string",
-    etat_muqueuses_palatin: "string",
-    etat_muqueuses_planche: "string",
-    etat_muqueuses_langual: "string",
-    etat_muqueuses_gengival: "string",
+    overture_buccal: "string" [option]<suffisant, <insuffisant, [number]>>,
+    hygiene_buccaux_dentaires: "string" <required> [options]<mauvais, moyenne, bon>,
+    etat_muqueuses_levre_sup: "string" [options]<RAS, [anything]>,
+    etat_muqueuses_levre_inf: "string" [options]<RAS, [anything]>,
+    etat_muqueuses_jugale: "string" [options]<RAS, [anything]>,
+    etat_muqueuses_palatin: "string" [options]<RAS, [anything]>,
+    etat_muqueuses_planche: "string" [options]<RAS, [anything]>,
+    etat_muqueuses_langual: "string" [options]<RAS, [anything]>,
+    etat_muqueuses_gengival: "string" [options]<RAS, [anything]>,
     etat_muqueuses_autres_lesion: "string",
 )
 
@@ -287,21 +287,21 @@ POST https://adentech/generalExamination/examenExobuccal
 ```
 (
     patient_id: "string" <required>,
-    inspection_symetrie_faciale: "string",
-    inspection_coloration_teguments: "string",
+    inspection_symetrie_faciale: "string" [options]<normal, [anything]>,
+    inspection_coloration_teguments: "string" [options]<normal, [anything]>,
     inspection_autres: "string",
-    palpation_atm_douleur: "string",
-    palpation_atm_bruite_articulaire: "string",
-    palpation_atm_jeu_condyliene: "string",
+    palpation_atm_douleur: "string" [options]<oui, no>,
+    palpation_atm_bruite_articulaire: "string" [options]<claquement, craquement, crepitation, non>,
+    palpation_atm_jeu_condyliene: "string" [options]<ressaut, asymetrique, symetrique, subluxation, [anything]>,
     palpation_atm_autres: "string",
-    palpation_chaine_ganglionaire_localisation: "string",
-    palpation_chaine_ganglionaire_nombre: "string",
+    palpation_chaine_ganglionaire_localisation: "string" [options]<submental, submendibular, sous_angular, [anything]>,
+    palpation_chaine_ganglionaire_nombre: "integer",
     palpation_chaine_ganglionaire_taille: "string",
-    palpation_chaine_ganglionaire_tempirature: "string",
-    palpation_muscles_masseter: "string",
-    palpation_muscles_temporal: "string",
-    palpation_muscles_pterygoidien_interne: "string",
-    palpation_muscles_pterygoidien_externe "string",
+    palpation_chaine_ganglionaire_tempirature: "string" [options]<chaude, froide>,
+    palpation_muscles_masseter: "string" [options]<isotonique, hypertrophique, douleure, [anything]>,
+    palpation_muscles_temporal: "string" [options]<isotonique, hypertrophique, douleure, [anything]>,
+    palpation_muscles_pterygoidien_interne: "string" [options]<isotonique, hypertrophique, douleure, [anything]>,
+    palpation_muscles_pterygoidien_externe "string" [options]<isotonique, hypertrophique, douleure, [anything]>,
 )
 
 Headers: { auth-token } <required>
@@ -322,10 +322,10 @@ POST https://adentech/generalExamination/medicalAnamnese
 ```
 (
     patient_id: "string" <required>,
-    motif_consultation: "string",
+    motif_consultation: "string" <required> [options]<fonctionnele esthetique douleure>,
     mauvaise_habitude: "string",
-    AG_personnel_maladie: "string",
-    AG_personnel_traitement: "string",
+    AG_personnel_maladie: "string" <required> [options]<non, [anything]>,
+    AG_personnel_traitement: "string" <required> [options]<non, [anything]>,
     AG_mere_maladie: "string",
     AG_pere_traitement: "string",
     AG_mere_traitement: "string",
