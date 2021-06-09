@@ -322,7 +322,7 @@ POST https://adentech/generalExamination/medicalAnamnese
 ```
 (
     patient_id: "string" <required>,
-    motif_consultation: "string" <required> [options]<fonctionnele esthetique douleure>,
+    motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
     mauvaise_habitude: "string",
     AG_personnel_maladie: "string" <required> [options]<non, [anything]>,
     AG_personnel_traitement: "string" <required> [options]<non, [anything]>,
@@ -368,15 +368,15 @@ POST https://adentech/oce/carieDentaire
 ```
 (
     patient_id: "string" <required>,
-    tooth_number: "integer",
-    motif_consultation: "string",
+    tooth_number: "integer" <required>,
+    motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
     histoire_maladie: "string",
-    class_black: "integer",
-    class_sit_sta: "string",
-    diagnostic_positive: "string",
-    diagnostic_etiologique: "string",
-    diagnostic_différentiel: "string",
-    decision_therapeutique: "string"
+    class_black: "integer" [options]<cl1, cl2, cl3, cl4, cl5>,
+    class_sit_sta: "string" [options]<sit_sta[1<1, 2, 3, 4>, 2<1, 2, 3, 4>, 3<1, 2, 3, 4>]>,
+    diagnostic_positive: "string" <required> [options]<baume1, baume2, baume3, baume4>,
+    diagnostic_etiologique: "string" <required> [options]<carie, traumtisme, [anything]>,
+    diagnostic_différentiel: "string" [options]<baume1, baume2, baume3, baume4>,
+    decision_therapeutique: "string" <required> [options]<dentinogene, cementogene, osteocementogene>
 )
 
 Headers: { auth-token } <required>
@@ -397,15 +397,15 @@ POST https://adentech/oce/signsEtRadio
 ```
 (
     patient_id: "string" <required>,
-    tooth_number: "integer",
-    sign_subjective_provoque: "string",
-    sign_subjective_spontanne: "string",
+    tooth_number: "integer" <required>,
+    sign_subjective_provoque: "arrayList" [options]<chaude, froide, sucre, [anything]>,
+    sign_subjective_spontanne: "string" [options]<ague, spontanne>,
     sign_subjective_autres: "string",
-    sign_objective_vitalite: "string",
-    sign_objective_percussion_axial: "string",
-    sign_objective_percussion_lateral: "string",
-    sign_objective_palpation_fond_vestibule: "string",
-    sign_objective_mobilite: "string",
+    sign_objective_vitalite: "string" [options]<postive, negtive>,
+    sign_objective_percussion_axial: "string" [options]<postive, negtive>,
+    sign_objective_percussion_lateral: "string" [options]<postive, negtive>,
+    sign_objective_palpation_fond_vestibule: "string" [options]<postive, negtive>,
+    sign_objective_mobilite: "string" [options]<postive, negtive>,
     radio_panoramique: "string",
     radio_retroslviolsire_couronne: "string",
     radio_retroslviolsire_racine: "string"
@@ -429,15 +429,15 @@ POST https://adentech/oce/traumatismeDentaireDents
 ```
 (
     patient_id: "string" <required>,
-    tooth_number: "integer",
+    tooth_number: "integer" <required>,
     description_tiente: "string",
     description_etat_dent: "string",
-    description_trait_fracture: "string",
-    lesion_associees: "string",
-    diagnostic_tissu_dur_pulpe: "string",
-    diagnostic_complication_paro: "string",
-    diagnostic_pulpaire: "string",
-    decision_therapeutique: "string",
+    description_trait_fracture: "string" [options]<tier_coronaire, tier_radiculare, tier_apical>,
+    lesion_associees: "string" <required> [options]<fracture, alviolaire, fracture, basale, fracture, nasale, non>,
+    diagnostic_tissu_dur_pulpe: "string" <required>,
+    diagnostic_complication_paro: "string" <required>,
+    diagnostic_pulpaire: "string" <required>,
+    decision_therapeutique: "string" <required>,
     pronostic: "string"
 )
 
@@ -459,15 +459,15 @@ POST https://adentech/oce/traumatismeDentairePatient
 ```
 (
     patient_id: "string" <required>,
-    motif_consultation: "string",
-    etat_general_actuel: "string",
-    date_traumatisme: "date",
-    cause_tarumatiame: "string",
-    circonstance_traumatisme: "string",
-    etat_generale_cephale: "string",
-    etat_general_pert_conscience: "string",
-    etat_generale_nauses: "string",
-    etat_generale_saignement: "string",
+    motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
+    etat_general_actuel: "string" <required>,
+    date_traumatisme: "date" <required>,
+    cause_tarumatiame: "string" <required>,
+    circonstance_traumatisme: "string" <required>,
+    etat_generale_cephale: "string" <required> [options]<oui, no>,
+    etat_general_pert_conscience: "string" <required> [options]<oui, no>,
+    etat_generale_nauses: "string" <required> [options]<oui, no>,
+    etat_generale_saignement: "string" <required> [options]<oui, no>,
     pronostic: "string"
 )
 
@@ -524,9 +524,9 @@ POST https://adentech/odf/anemnese
 ```
 (
     patient_id: "string" <required>,
-    motif_consultation: "string",
+    motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
     antecedente_odf_duree: "string",
-    antecedente_odf_type: "string",
+    antecedente_odf[anything]pe: "string",
     tics_habitude: "string"
 )
 
@@ -865,9 +865,9 @@ POST https://adentech/prothese/edentePartielle
 ```
 (
     patient_id: "string" <required>,
-    motif_consultation: "string",
+    motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
     kenedy_apelgate_maxillaire: "string",
-    kenedy_apelgate_mandibule: "string",
+    kenedy_ape[anything]te_mandibule: "string",
     decision_therapeutique: "string"
 )
 
@@ -889,10 +889,10 @@ POST https://adentech/prothese/edenteTotal
 ```
 (
     patient_id: "string" <required>,
-    motif_consultation: "string"
-    linda_maxillaire: "string"
-    linda_mandibule: "string"
-    decision_therapeutique: "string
+    motif_consultation: "string" <required> [options]<fonctionnele, esthetique, douleure, [anything]>,
+    linda_maxillaire: "string",
+    linda_mandibule: "string",
+    decision_therapeutique: "string"
 )
 
 Headers: { auth-token } <required>
