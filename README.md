@@ -104,7 +104,7 @@ GET https://adentech/users/patients?user_id
 
 `Request Query Parameters`
 ```
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -149,7 +149,7 @@ POST https://adentech/users/patients/appointments
     appointment: "date" <required>
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -173,7 +173,7 @@ GET https://adentech/users/patients/appointments?user_id
 
 `Request Query Parameters`
 ```
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -214,7 +214,7 @@ POST https://adentech/patients
     appointment: "date"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -269,7 +269,7 @@ POST https://adentech/generalExamination/examenEndobuccal
     etat_muqueuses_autres_lesion: "string",
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -304,7 +304,7 @@ POST https://adentech/generalExamination/examenExobuccal
     palpation_muscles_pterygoidien_externe "string" [options]<isotonique, hypertrophique, douleure, [anything]>,
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -348,7 +348,7 @@ POST https://adentech/generalExamination/medicalAnamnese
     AS_autres: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -379,7 +379,7 @@ POST https://adentech/oce/carieDentaire
     decision_therapeutique: "string" <required> [options]<dentinogene, cementogene, osteocementogene>
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -411,7 +411,7 @@ POST https://adentech/oce/signsEtRadio
     radio_retroslviolsire_racine: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -441,7 +441,7 @@ POST https://adentech/oce/traumatismeDentaireDents
     pronostic: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -471,7 +471,7 @@ POST https://adentech/oce/traumatismeDentairePatient
     pronostic: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -506,7 +506,7 @@ POST https://adentech/odf/moulage
     mandubule_indice_pont_D6G6: "integer"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -530,7 +530,7 @@ POST https://adentech/odf/anemnese
     tics_habitude: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -565,7 +565,7 @@ POST https://adentech/odf/diagnosticTraitement
     plan_trt_pronostic: "string" <required>
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -593,7 +593,7 @@ POST https://adentech/odf/endobuccal
     chemin_fermeture: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -623,7 +623,7 @@ POST https://adentech/odf/exobuccal
     sillons_sng: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -673,7 +673,7 @@ POST https://adentech/odf/resulteCepholomettrie
     esthetique_angle_z: "integer"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -707,7 +707,7 @@ POST https://adentech/paro/examenGingival
     cote_l: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -736,7 +736,7 @@ POST https://adentech/paro/examenSondage
     tooth_number: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -778,7 +778,7 @@ POST https://adentech/paro/indices
     biotype_parodontal: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -815,7 +815,7 @@ POST https://adentech/paro/interpretationRadiologic
     trabeculation_osseuses_mand: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -845,7 +845,7 @@ POST https://adentech/paro/interpretationRadiologic
     pronostic_unitaire: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -871,7 +871,7 @@ POST https://adentech/prothese/edentePartielle
     decision_therapeutique: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -895,7 +895,7 @@ POST https://adentech/prothese/edenteTotal
     decision_therapeutique: "string"
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -926,7 +926,7 @@ GET https://adentech/generalExamination/medicalAnamnese?patient_id
     patient_id: "string" <required>,
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
@@ -965,7 +965,7 @@ PUT https://adentech/generalExamination/medicalAnamnese
     ....
 )
 
-Headers: { auth-token } <required>
+Headers: { authToken } <required>
 ```
 
 > Response Object
